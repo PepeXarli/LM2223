@@ -1,0 +1,24 @@
+.encabezados{
+    font-size: 200%;
+    color:blue;
+    text-align: center;
+    
+    }
+    
+    .parrafos{
+    color: yellow;
+    text-align: left;
+    margin-left: 20px;
+    }
+
+    .cuadrado{
+        width: 100px;
+        height: 100px;
+        background-color: grey;
+
+    }
+    
+    body{
+        background: url(https://img.freepik.com/vector-gratis/fondo-degradado-tonos-verdes_23-2148363157.jpg?w=2000) no-repeat top fixed;
+    }
+
