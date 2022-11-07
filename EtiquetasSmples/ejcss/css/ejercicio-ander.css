@@ -1,0 +1,61 @@
+#banner{
+width: 100%;
+height: 100px;
+background-color: darksalmon;
+align-items: center;
+display: flex;
+font-size: 300%;
+justify-content: center;
+position: fixed;
+top: 0px;
+left: 0px;
+z-index: 5;
+}
+
+body{
+    background: url(https://img.freepik.com/free-photo/salmon-acrylic-contemporary-art_23-2148315478.jpg?w=2000) repeat center;
+}
+
+#caja1{
+    width: 300px;
+    height: auto;
+    background-color: salmon;
+    position: relative;
+    top: 130px;
+    left: 0px;
+    border-radius: 8px;
+    
+}
+
+#caja2{
+    width: 300px;
+    height: auto;
+    background-color: lightsalmon;
+    position: relative;
+    top: -654px;
+    left: 450px;
+    border-radius: 8px;
+}
+
+
+#caja3{
+    width: 300px;
+    height: auto;
+    background-color: rgb(243, 120, 72);
+    position: relative;
+    top: -608px;
+    left: 450px;
+    border-radius: 8px;
+}
+
+#caja4{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrlJTrzn-A8GPpaSpfuxDNGnpLVzT2AmD7kI1UZvIbu85X_7SVwHx4Pob0R6fq497bVJ4&usqp=CAU);
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.txt{
+    margin: 8px ;
+
+}
