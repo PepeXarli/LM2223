@@ -49,10 +49,12 @@ body{
 }
 
 #caja4{
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrlJTrzn-A8GPpaSpfuxDNGnpLVzT2AmD7kI1UZvIbu85X_7SVwHx4Pob0R6fq497bVJ4&usqp=CAU);
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrlJTrzn-A8GPpaSpfuxDNGnpLVzT2AmD7kI1UZvIbu85X_7SVwHx4Pob0R6fq497bVJ4&usqp=CAU) no-repeat;
     position: relative;
-    top: 0px;
-    left: 0px;
+    top: -1090px;
+    left: 900px;
+    height: 225px;
+    width: 225px;
 }
 
 .txt{
