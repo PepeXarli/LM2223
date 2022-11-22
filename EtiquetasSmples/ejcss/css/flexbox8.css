@@ -1,0 +1,38 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow: hidden;
+}
+
+
+.padre{
+    color: white;
+    font-size: 30px;
+    
+}
+
+div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.padre > div{
+    
+    height: 10%;
+    width: 100%;
+}
+
+#div1{background-color: red;}
+#div2{background-color: blue;}
+#div3{background-color: orange;}
+#div4{background-color: yellow;}
+#div5{background-color: green;}
+#div6{background-color: brown;}
+#div7{background-color: grey;}
+#div8{background-color: mediumaquamarine;}
+#div9{background-color: darkblue;}
+#div10{background-color: greenyellow;}

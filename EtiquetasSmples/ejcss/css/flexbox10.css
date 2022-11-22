@@ -1,0 +1,31 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+
+.padre{
+    color: white;
+    font-size: 30px;
+    flex-direction: column;
+    height: 100vh;
+    flex-wrap: wrap ;
+    display: flex;
+}
+
+div{
+   
+    min-height: 25%;}
+
+.padre > div{
+    
+}
+
+#div1{background-color: red; flex-grow: 4;}
+#div2{background-color: blue; flex-grow: 3;}
+#div3{background-color: orange; flex-grow: 6;}
+#div4{background-color: yellow; flex-grow: 1;}
+#div5{background-color: green; flex-grow: 20;}
+#div6{background-color: brown; flex-grow: 20;}

@@ -1,0 +1,44 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    font-size: 30px;
+}
+
+
+.padre{
+    
+    height: 100%ss;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+
+div{
+    width: 100%;
+    text-align: center;
+    line-height: 100%;
+    
+    
+}
+
+.padre > div{
+    
+    font-size: xx-small;
+    
+    width: auto;
+}
+
+#div1{background-color: red;}
+#div2{background-color: blue;}
+#div3{background-color: orange;}
+#div4{background-color: yellow;}
+#div5{background-color: green;}
+#div6{background-color: brown;}
+#div7{background-color: grey;}
+#div8{background-color: mediumaquamarine;}
+#div9{background-color: darkblue;}
+#div10{background-color: greenyellow;}

@@ -1,0 +1,37 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.padre{
+    color: white;
+    font-size: 30px;
+    width: 100vw;
+    
+}
+
+div{
+    
+    
+    display: flex;
+    
+}
+
+.padre > div{
+    
+    
+}
+
+#div1{background-color: red;}
+#div2{background-color: blue;}
+#div3{background-color: orange;}
+#div4{background-color: yellow;}
+#div5{background-color: green;}
+#div6{background-color: brown;}
+#div7{background-color: grey;}
+#div8{background-color: mediumaquamarine;}
+#div9{background-color: darkblue;}
+#div10{background-color: greenyellow;}

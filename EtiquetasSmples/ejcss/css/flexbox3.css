@@ -1,0 +1,43 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+}
+
+.padre{
+     
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    line-height: auto;
+    
+}
+
+div{
+    color: white;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    justify-content: center;
+    line-height: 170px;
+   
+}
+
+.padre > div{
+    
+    height: auto;
+    width: 33.33%;
+}
+
+#div1{background-color: red;}
+#div2{background-color: blue;}
+#div3{background-color: orange;}
+#div4{background-color: yellow;}
+#div5{background-color: green;}
+#div6{background-color: brown;}
+#div7{background-color: grey;}
+#div8{background-color: mediumaquamarine;}
+#div9{background-color: darkblue;}
+#div10{background-color: greenyellow;}
