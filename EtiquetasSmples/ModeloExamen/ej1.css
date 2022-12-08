@@ -5,6 +5,10 @@ body{
     font-family: trebuchet, geneva, sans-serif;
 }
 
+.texto, .otro{
+    padding: 1rem;
+}
+
 .header{
     width: 90%;
     height: 16vh;
@@ -32,6 +36,9 @@ body{
     display: flex;
 }
 
+.menu > .links{
+    margin: 0  auto;
+}
 .links{
     float:left;
     background-color: #4c3803;
@@ -44,14 +51,14 @@ body{
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    flex-grow: between;
+    
 }
 
 .contenedor{
     display: grid;
     width: 90%;
     height: 50vh;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 75% auto;
     grid-template-areas: 'text otro' 'linea linea';
     grid-template-rows: auto;
     margin: 0 auto;
@@ -59,36 +66,37 @@ body{
 
 .contenedor > div{
     width: auto;
-    display: flex;
-    justify-content: left;
 }
+
 
 
 .texto{
     
-    background-color: grey;
     grid-column: 1;
     grid-area: text;
     margin: auto auto;
     float: top;
+    margin: auto;
  
 }
 
-.texto > p{
-    position: relative;
-    top: 0px;
 
-}
 
 .otro{
     background-color: #b28306;
-   
+    grid-column: 2;
     grid-area: otro;
-
-
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
 }
 
 .linea{
     background-color: black;
-    grid-area:linea
+    grid-area:linea;
+    padding: 4px;
+    width: 90vw;
+    margin: 0 auto;
 }
