@@ -48,11 +48,47 @@ body{
 }
 
 .contenedor{
-    width: 90%;
     display: grid;
+    width: 90%;
+    height: 50vh;
     grid-template-columns: 75% 25%;
+    grid-template-areas: 'text otro' 'linea linea';
+    grid-template-rows: auto;
+    margin: 0 auto;
 }
+
+.contenedor > div{
+    width: auto;
+    display: flex;
+    justify-content: left;
+}
+
 
 .texto{
     
+    background-color: grey;
+    grid-column: 1;
+    grid-area: text;
+    margin: auto auto;
+    float: top;
+ 
+}
+
+.texto > p{
+    position: relative;
+    top: 0px;
+
+}
+
+.otro{
+    background-color: #b28306;
+   
+    grid-area: otro;
+
+
+}
+
+.linea{
+    background-color: black;
+    grid-area:linea
 }
