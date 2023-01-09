@@ -1,0 +1,102 @@
+body{
+    background: url(bg.jpg) fixed no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: trebuchet, geneva, sans-serif;
+}
+
+.texto, .otro{
+    padding: 1rem;
+}
+
+.header{
+    width: 90%;
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #b28306;
+    border-radius: 20px;
+    border-bottom: 1px solid black;
+    color: #4c3803;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.menu{
+    float: top;
+    background-color: #ebcd7c;
+    border-radius: 20px;
+    width: 90%;
+    height: 7vh;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.menu > .links{
+    margin: 0  auto;
+}
+.links{
+    float:left;
+    background-color: #4c3803;
+    color: #b28306;
+    border-radius: 20px;
+    width: 17vw;
+    height: 4vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    
+}
+
+.contenedor{
+    display: grid;
+    width: 90%;
+    height: 50vh;
+    grid-template-columns: 75% auto;
+    grid-template-areas: 'text otro' 'linea linea';
+    grid-template-rows: auto;
+    margin: 0 auto;
+}
+
+.contenedor > div{
+    width: auto;
+}
+
+
+
+.texto{
+    
+    grid-column: 1;
+    grid-area: text;
+    margin: auto auto;
+    float: top;
+    margin: auto;
+ 
+}
+
+
+
+.otro{
+    background-color: #b28306;
+    grid-column: 2;
+    grid-area: otro;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+}
+
+.linea{
+    background-color: black;
+    grid-area:linea;
+    padding: 4px;
+    width: 90vw;
+    margin: 0 auto;
+}
