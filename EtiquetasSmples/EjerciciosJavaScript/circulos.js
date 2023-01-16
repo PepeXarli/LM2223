@@ -1,18 +1,19 @@
-function norojo() {
-    document.getElementById('rojo').style.display='none'
+function no(id) {
+    document.getElementById(id).style.backgroundColor='transparent'
 }
-function rojo(){
-    document.getElementById('rojo').style.display='block'
+function si(id,color){
+    document.getElementById(id).style.backgroundColor=color
 }
-function noazul() {
-    document.getElementById('azul').style.display='none'
+
+function cambiar(id, color){
+
+if (document.getElementById(id).style.backgroundColor=='transparent'){
+
+    document.getElementById(id).style.backgroundColor=color;
 }
-function azul(){
-    document.getElementById('azul').style.display='block'
+
+else{
+    document.getElementById(id).style.backgroundColor='transparent';
 }
-function noyellow() {
-    document.getElementById('yellow').style.display='none'
-}
-function yellow(){
-    document.getElementById('yellow').style.display='block'
+
 }

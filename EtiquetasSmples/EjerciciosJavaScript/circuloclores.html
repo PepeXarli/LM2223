@@ -47,14 +47,18 @@
 </div>
 
 <div class="container2">
-    <button type="button" onclick="norojo()">clic para desaparecer rojo</button>
-    <button type="button" onclick="rojo()">clic para aparecer rojo</button>
+    <button type="button" onclick="no('rojo', )">clic para desaparecer rojo</button>
+    <button type="button" onclick="si('rojo', 'red')">clic para aparecer rojo</button>
 </div><div class="container2">
-    <button type="button" onclick="noazul()">clic para desaparecer azul</button>
-    <button type="button" onclick="azul()">clic para aparecer azul</button>
+    <button type="button" onclick="no('azul', )">clic para desaparecer azul</button>
+    <button type="button" onclick="si('azul', 'blue')">clic para aparecer azul</button>
 </div><div class="container2">
-    <button type="button" onclick="noyellow()">clic para desaparecer amarillo</button>
-    <button type="button" onclick="yellow()">clic para aparecer amarillo</button>
+    <button type="button" onclick="no('yellow')">clic para desaparecer amarillo</button>
+    <button type="button" onclick="si('yellow', 'yellow')">clic para aparecer amarillo</button>
 </div>
+
+<button type="button" onclick="cambiar('rojo', 'red')">Cambiar rojo</button>
+<button type="button" onclick="cambiar('azul', 'blue')">Cambiar azul</button>
+<button type="button" onclick="cambiar('yellow', 'yellow')">Cambiar amarillo</button>
 </body>
 </html>
