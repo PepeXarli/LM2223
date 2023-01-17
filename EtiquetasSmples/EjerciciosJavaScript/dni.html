@@ -16,7 +16,8 @@
     <script>
         letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
         var entrada = document.getElementById('entrada').value;
-        var resultado = letras[entrada%23];
+        let resto = entrada%23;
+        var resultado = letras[resto];
 
         function calcular(){
             document.getElementById('resultado').innerHTML = 'Tu letra es ' + resultado;
