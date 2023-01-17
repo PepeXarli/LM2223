@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +14,26 @@
     <p id="resultado"></p>
 
     <script>
-        letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+
+function calcular(){
+
+        if (document.getElementById('entrada').length=8){
+         letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
         var entrada = document.getElementById('entrada').value;
-        let resto = entrada%23;
-        var resultado = letras[resto];
+        var resto = entrada%23;
+        var resultado = letras[resto]
+        
 
-        function calcular(){
+        
             document.getElementById('resultado').innerHTML = 'Tu letra es ' + resultado;
-        }
+            
+    }
 
+   else{
+    alert('ERROR, EL DNI DEBE CONSTAR DE 8 DÍGITOS')
+   } 
 
-    </script>
+}
+  </script>
 </body>
 </html>
