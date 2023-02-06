@@ -11,7 +11,7 @@
             border: 1px solid black;
             border-radius: 5px;
             height: auto;
-            width: 200px;
+            width: 300px;
         }
 
         #trash{
@@ -25,14 +25,21 @@
 
 <input type="text" placeholder="Escribe tu post" id="entrada"> <button type="button" onclick="publicar()">Publicar</button>
 
-    <script id="script1">
+<p id="demo"></p>
+
+<button onclick="ordenar()">Ordenar</button>
+    <script >
         
         var frases=['Frase 1','Frase 2','Frase 3','Frase 4','Frase 5','Frase 6','Frase 7','Frase 8','Frase 9','Frase 10'];
         imprime();
         function imprime(){
-            for(var i=frases.length-1;i>=0;i-=1){
-                document.write('<div class="caja"><img src="images/twitter.png" alt="Logo de twitter">'+frases[i]+'<img id="trash" onclick="alerta()" src="images/trash.png" alt="Papelera"></div>');
+            let i=0, codigoHTML="";
+            let icono="<div class='caja'><img src='images/twitter.png'>"
+            for(i;i<frases.length;i+=1){
+              
+                codigoHTML+=icono+frases[i]+"<img id='trash' onclick='eliminar(frases["+i+"])' src='images/trash.png' <br></div>";
             }
+            document.getElementById('demo').innerHTML=codigoHTML;
         }
 
         function publicar(){
@@ -40,8 +47,15 @@
             imprime();            
         }
 
-        function alerta(){
-            alert('Has hecho click en la papelera')
+        function eliminar(elemento){
+            let pos = frases.indexOf(elemento);
+            frases.splice(pos,1)
+            imprime();
+        }
+
+        function ordenar(){
+            frases.sort();
+            imprime();
         }
     </script>
 </body>

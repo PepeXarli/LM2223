@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Array</title>
+</head>
+<body>
+    
+<h1>ADIVINA LA PALABRA</h1>
+
+<p>Adivina una de las siguientes palabras:</p>
+<p id="texto"></p>
+<input id="prueba" placeholder="Prueba tu palabra"><button onclick="resuelve()">Adivina</button>
+<script>
+    var palabras=['perro', 'coche', 'fiesta', 'arbol', 'juan', 'cigüeñal'];
+    document.getElementById('texto').innerHTML=palabras;
+
+   var indice=Math.floor( Math.random() * 6)
+    var secreta =palabras[indice]
+
+    function resuelve(){
+        if (document.getElementById('prueba').value==secreta){
+            alert('¡Enhorabuena, has acertao!');
+        }
+
+        else{
+            alert('la palabra era '+secreta);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
