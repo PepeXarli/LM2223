@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Cutre</title>
+</head>
+<body>
+    <h1>CALCULADORA CUTRE:</h1>
+    <input id="uno" type="text">
+    <input id="dos" type="text">
+
+    <button onclick="suma()">+</button>
+    <button onclick="resta()">-</button>
+    <button onclick="multiplicacion()">*</button>
+    <button onclick="divide()">/</button>
+
+    <script>
+        let uno=parseFloat( document.getElementById('uno').value)
+        let dos = parseFloat( document.getElementById('dos').value)
+
+
+            function validar(){
+
+                let valida=true;
+
+        if(uno=='' || dos==''){
+                valida=false;
+        }
+      
+         return valida;
+    }
+
+        function suma(){
+
+            if(validar()){
+                let resultado1= parseFloat(uno+dos)
+                alert('El resultado es ' +resultado1)
+            }
+            else{alert('Debe introducir un número')}
+        }
+
+
+                function resta(){
+        let resultado2= parseFloat(uno-dos)
+        alert('El resultado es ' +resultado2)
+    }
+                function multiplicacion(){
+        let resultado3= parseFloat(uno*dos)
+        alert('El resultado es ' +resultado3)
+    }
+                function divide(){
+                    if (dos!=0){
+        let resultado4= parseFloat(uno/dos)
+        alert('El resultado es ' +resultado4)
+                    }
+                    else{alert('No podemos dividir entre 0')}
+    }
+        
+    
+    </script>
+</body>
+</html>
