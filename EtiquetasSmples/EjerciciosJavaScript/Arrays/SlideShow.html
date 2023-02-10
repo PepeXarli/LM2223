@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IES Isbilya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <table border="0" cellpadding="0">
+     <h1>IES Isbilya</h1>
+  <tr>
+    <td width="100%"><img src="s0.jpg" id="fotoActual"></td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <form>
+      <div align="center">
+          
+          
+          <input type="button" value="Atrás" onClick="atras()">
+          <input type="button" value="Siguiente" onClick="siguiente()">
+          <br>
+      
+        </div>
+    </form>
+    </td>
+  </tr>
+</table>  
+    
+    <script>
+        let i=0;
+        let images=["imagesSlideShow/s0.jpg", "imagesSlideShow/s1.jpg", "imagesSlideShow/s2.jpg", "imagesSlideShow/s3.jpg", "imagesSlideShow/s4.jpg"];
+
+        function siguiente(){
+            i+=1;
+            if(i>=images.length){
+                i=0;
+                fotoActual.setAttribute('src', images[i]);
+            }
+            else{
+                fotoActual.setAttribute('src', images[i]);
+            }
+            
+        }
+
+        function atras(){
+            i-=1;
+            if(i<0){
+                i=images.length-1;
+                fotoActual.setAttribute('src', images[i]);
+
+            }
+            else{
+                fotoActual.setAttribute('src', images[i]);
+
+            }
+        }
+    </script>
+        
+</body>
+</html>
