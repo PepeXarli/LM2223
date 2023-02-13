@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES PRIMO</title>
+</head>
+<body>
+    <h1>INTRODUCE TU NÚMERO</h1>
+    <input type="text" id="entrada"> <button onclick="comprobar()">Enviar</button>
+    <p id="resultado"></p>
+
+    <script>
+        
+        function comprobar(){
+            let numero=parseInt(document.getElementById('entrada').value) ;
+            let i=2;
+            let esPrimo=true;
+
+            let divisores = []
+
+            while(i<numero && esPrimo){
+                
+                if(numero%i==0){
+                    
+                    divisores.push(i);
+                    i++;
+                }
+                else{
+                    esPrimo=false;
+                    document.getElementById('resultado').innerHTML= divisores;
+                }
+               
+                
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
