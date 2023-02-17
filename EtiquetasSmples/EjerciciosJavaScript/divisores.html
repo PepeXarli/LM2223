@@ -15,27 +15,22 @@
         
         function comprobar(){
             let numero=parseInt(document.getElementById('entrada').value) ;
-            let i=2;
-            let esPrimo=true;
+            let i=1;
 
             let divisores = []
 
-            while(i<numero && esPrimo){
+            while(i<=numero ){
                 
                 if(numero%i==0){
                     
                     divisores.push(i);
-                    i++;
+                    
                 }
-                else{
-                    esPrimo=false;
-                    document.getElementById('resultado').innerHTML= divisores;
-                }
-               
+                i++; 
                 
             }
 
-            
+            document.getElementById('resultado').innerHTML= divisores;
         }
     </script>
 </body>
