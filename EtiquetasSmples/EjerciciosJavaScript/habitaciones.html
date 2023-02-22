@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones</title>
+</head>
+<body>
+    
+    <h2>ASIGNACIÓN DE HABITACIONES</h2>
+
+    <input type="number" id="adultos" placeholder="Número de adultos">
+    <input type="number" id="niños" placeholder="Número de niños">
+    <button onclick="calcula()">CALCULA</button>
+
+    <p id="resultado"></p>
+
+
+    <script>
+        function calcula(){
+            let adultos=document.getElementById('adultos').value;
+            let ninos=document.getElementById('niños').value;
+            let dobles=0
+
+            if(adultos<=0){
+                document.getElementById('resultado').innerHTML='Debe ir al menos un adulto'
+                
+            }
+            else if(adultos==1 || adultos==2){
+                if(ninos==0){
+                    document.getElementById('resultado').innerHTML='Necesita una habitación doble'
+                }
+                else if(ninos==1){
+                    document.getElementById('resultado').innerHTML='Necesita una habitación doble con supletoria'
+                }
+                else if(ninos>1 && ninos<=3){
+                    document.getElementById('resultado').innerHTML='Necesita una habitación familiar'
+                }
+                else if(ninos>3){
+                    document.getElementById('resultado').innerHTML='Búsquese un canguro y disfrute de las vacaciones en condiciones'
+                }
+            }
+            else if(adultos==3){
+                document.getElementById('resultado').innerHTML='Necesita una habitación triple'
+            }
+            else if(adultos>3){
+                if(adultos%2==0){
+                    dobles=adultos/2
+                    document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                }
+                else{
+                    dobles=adultos/2+1
+                    document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                }
+                
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>
