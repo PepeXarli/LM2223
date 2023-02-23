@@ -22,15 +22,13 @@ function calcular(){
         var entrada = document.getElementById('entrada').value;
         var resto = entrada%23;
         var resultado = letras[resto]
-        
-
-        
+      
             document.getElementById('resultado').innerHTML = 'Tu letra es ' + resultado;
             
-    }
+        }
 
    else{
-    alert('ERROR, EL DNI DEBE CONSTAR DE 8 DÍGITOS')
+    document.getElementById('resultado').innerHTML='El dni debe constar de 8 cifras'
    } 
 
 }

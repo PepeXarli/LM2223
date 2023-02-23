@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANUNCIO ROTATORIO</title>
+</head>
+<body>
+    <h1>Anuncios rotatorios</h1>
+
+    <a href="https://store.dsautomobiles.es/configurable" target="_blank" id="enlace">
+        <img src="images/banner0.png" alt="" id="imagen">
+    </a>
+
+    <script>
+        let i=0
+        
+         let images= ["images/banner0.png", "images/banner1.png", "images/banner2.png", "images/banner3.png", "images/banner4.png", "images/banner5.png"];
+         let enlaces = [
+            "https://store.dsautomobiles.es/configurable",
+            "https://www.elcorteingles.es/supermercado/",
+            "https://www.elcorteingles.es/daitsu/electrodomesticos/aire-acondicionado/",
+            "https://www.madridhifi.com",
+            "https://launidad.movistarplus.es/?dis_c=331187589&dclid=CL-Lt9zx4_YCFdZEHQkdLpkExQ",
+            "https://www.tikamoon.es"
+            ];
+            var rand = Math.floor(Math.random()*images.length);
+            var contador=rand;
+            setTimeout(banner, 3000);
+            function banner(){
+                enlace.setAttribute('href',enlaces[contador]);
+                imagen.setAttribute('src', images[contador]);
+                contador+=1;
+                contador = contador%images.length;
+                setTimeout(banner, 3000);
+            }
+
+            
+    </script>
+</body>
+</html>

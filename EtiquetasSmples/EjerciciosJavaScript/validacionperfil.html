@@ -17,24 +17,82 @@
     <input type="tel" name="tel" id="tf" placeholder="Teléfono"> <p id="vtf"></p>
     <input type="text" name="dni" id="dni" placeholder="DNi"> <p id="vdni"></p>
     <input type="password" name="pass" id="contra" placeholder="PIN"> <p id="vcontra"></p>
-    <input type="password" name="pass2" id="contra" placeholder="Repita su PIN"> <p id="vcontra2"></p>
-
-    <button onclick="validar()"></button>
+    <input type="password" name="pass2" id="contra2" placeholder="Repita su PIN"> <p id="vcontra2"></p>
+    <button onclick="validar()">CREA TU PERFIL</button>
 
 
     <script>
         function validar(){
 
-            let nombre=document.getElementById('nombre');
-            let apellido=document.getElementById('apellido');
-            let email=document.getElementById('email');
-            let direccion=document.getElementById('direccion');
-            let ciudad=document.getElementById('ciudad');
-            let tel=document.getElementById('tf');
-            let dni=document.getElementById('dni');
-            let pass=document.getElementById('pass');
-            let pass2=document.getElementById('pass2');
+            let nombre=document.getElementById('nombre').value;
+            let apellido=document.getElementById('apellido').value;
+            let email=document.getElementById('email').value;
+            let direccion=document.getElementById('direccion').value;
+            let ciudad=document.getElementById('ciudad').value;
+            let tel=document.getElementById('tf').value;
+            let dni=document.getElementById('dni').value;
+            let pass=document.getElementById('contra').value;
+            let pass2=document.getElementById('contra2').value;
 
+
+            if(nombre==""){
+                document.getElementById('vnombre').innerHTML='Debe introducir un nombre';
+            }
+
+            else{
+
+                if(apellido==""){
+                    document.getElementById('vapellido').innerHTML='Debe introducir un apellido';
+
+                }
+                else{
+                    if(email==""){
+                    document.getElementById('vemail').innerHTML='Debe introducir un email';
+                    }  
+                    else{
+                        if(dni==""){
+                        document.getElementById('vdni').innerHTML='Debe introducir un DNI';
+                        }
+                        else{
+                            if(dni.length!=9 /*|| */){
+                                document.getElementById('vdni').innerHTML='DNI no válido'
+                            }
+                            else{
+                                if(pass==""){
+                                document.getElementById('vcontra').innerHTML='Debe introducir una contraseña';
+                                }
+                                else{
+                                    if(pass.length<8){
+                                        document.getElementById('vcontra2').innerHTML='Su contraseña debe contener mínimo 8 caracteres de largo'
+                                    }
+                                    
+                                    else{
+                                        if(pass2==""){
+                                        document.getElementById('vcontra2').innerHTML='Debe introducir otra vez su contraseña';
+                                        }
+                                        else{
+                                            if(pass2!=pass){
+                                            document.getElementById('vcontra2').innerHTML='Su contraseña no coincide';
+                                            }
+                                                
+                                            else{
+                                                let Usuario = nombre[0]+nombre[1]+apellido[0]+apellido[1]+tel[tel.length-3]+tel[tel.length-2]+tel[tel.length-1]
+                                                alert('Su usuario es '+Usuario)
+
+                                            }
+                                        }
+                                
+                                    }
+                                    
+                                }
+
+
+                               
+                            }
+                        }
+                    } 
+                }
+            }
         }
     </script>
 
