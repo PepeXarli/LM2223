@@ -21,7 +21,8 @@
         function calcula(){
             let adultos=document.getElementById('adultos').value;
             let ninos=document.getElementById('niños').value;
-            let dobles=0
+            let dobles=0;
+            let supletoria=0;
 
             if(adultos<=0){
                 document.getElementById('resultado').innerHTML='Debe ir al menos un adulto'
@@ -50,7 +51,7 @@
                     document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
                 }
                 else{
-                    dobles=adultos/2+1
+                    dobles=parseInt(adultos/2)+1
                     document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
                 }
                 
