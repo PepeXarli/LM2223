@@ -46,14 +46,29 @@
                 document.getElementById('resultado').innerHTML='Necesita una habitación triple'
             }
             else if(adultos>3){
-                if(adultos%2==0){
-                    dobles=adultos/2
-                    document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                if(ninos==0){
+                
+                    if(adultos%2==0){
+                        dobles=adultos/2;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                    }
+                    else{
+                     dobles=parseInt(adultos/2)+1
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                    }
                 }
-                else{
-                    dobles=parseInt(adultos/2)+1
-                    document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
-                }
+                else if(ninos==1){
+
+                    if(adultos%2==0){
+                        dobles=adultos/2;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+', una de ellas con supletoria';
+                    }
+                    else{
+                     dobles=parseInt(adultos/2)+1;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+', una de ellas con supletoria';
+                    }
+                } 
+                         
                 
             }
         }
