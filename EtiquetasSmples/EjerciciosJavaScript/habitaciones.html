@@ -21,7 +21,9 @@
         function calcula(){
             let adultos=document.getElementById('adultos').value;
             let ninos=document.getElementById('niños').value;
-            let dobles=0
+            let dobles=0;
+            let supletoria=0;
+            let triples=0;
 
             if(adultos<=0){
                 document.getElementById('resultado').innerHTML='Debe ir al menos un adulto'
@@ -45,14 +47,49 @@
                 document.getElementById('resultado').innerHTML='Necesita una habitación triple'
             }
             else if(adultos>3){
-                if(adultos%2==0){
-                    dobles=adultos/2
-                    document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                if(ninos==0){
+                
+                    if(adultos%2==0){
+                        dobles=adultos/2;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                    }
+                    else{
+                     dobles=parseInt(adultos/2)+1;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                    }
                 }
-                else{
-                    dobles=adultos/2+1
-                    document.getElementById('resultado').innerHTML='Necesita '+dobles+' habitaciones dobles';
+                else if(ninos==1){
+
+                    if(adultos%2==0){
+                        dobles=adultos/2;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' dobles, una de ellas con supletoria';
+                    }
+                    else{
+                     dobles=parseInt(adultos/2)+1;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' dobles, una de ellas con supletoria';
+                    }
+                } 
+
+                else if(ninos==2){
+                    adultos=adultos-2;
+
+                    if(adultos%2==0){
+                        dobles=adultos/2;
+                        document.getElementById('resultado').innerHTML='Necesita '+dobles+' dobles y una familiar';
+                    }
+                    else{
+                        if(adultos%3==0){
+                            triples=adultos/3
+                            document.getElementById('resultado').innerHTML='Necesita '+triples+' triples y una familiar';
+                        }
+                        else{
+                            dobles=parseInt(adultos/2)+1;
+                            document.getElementById('resultado').innerHTML='Necesita '+dobles+' dobles y una familiar';
+                        }
+                    }
                 }
+                
+                         
                 
             }
         }
