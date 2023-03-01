@@ -38,62 +38,107 @@
             if(nombre==""){
                 document.getElementById('vnombre').innerHTML='Debe introducir un nombre';
             }
-
             else{
+                document.getElementById('vnombre').innerHTML='';
 
-                if(apellido==""){
+            }
+
+           
+
+           if(apellido==""){
                     document.getElementById('vapellido').innerHTML='Debe introducir un apellido';
 
+            }
+
+            else{
+                document.getElementById('vapellido').innerHTML='';
+
+            }
+          
+            if(email==""){
+                document.getElementById('vemail').innerHTML='Debe introducir un email';
+            }
+            else{
+                valEmail(email);
+            }  
+                   
+            if(dni==""){
+                document.getElementById('vdni').innerHTML='Debe introducir un DNI';
+            }
+                else{
+                    if(dni.length!=9 ){
+                        document.getElementById('vdni').innerHTML='Longitud del DNI incorrecta'
+                    }
+                    else{
+                        let opciones = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+                        let num = parseInt(dni[0]+ dni[1]+ dni[2]+ dni[3]+ dni[4]+ dni[5]+ dni[6]+ dni[7]);
+                        let letra=num%23;
+                        if(dni[8]!=opciones[letra]){
+                            document.getElementById('vdni').innerHTML='DNI incorrecto';
+                        }
+
+                        else{
+                        document.getElementById('vdni').innerHTML='';
+
+                        }
+                    }
+                    
+                }
+                            
+            if(pass==""){
+                document.getElementById('vcontra').innerHTML='Debe introducir una contraseña';
+            }
+            else{
+                if(pass.length<8){
+                    document.getElementById('vcontra').innerHTML='Su contraseña debe contener mínimo 8 caracteres de largo'
                 }
                 else{
-                    if(email==""){
-                    document.getElementById('vemail').innerHTML='Debe introducir un email';
-                    }  
-                    else{
-                        if(dni==""){
-                        document.getElementById('vdni').innerHTML='Debe introducir un DNI';
-                        }
-                        else{
-                            if(dni.length!=9 /*|| */){
-                                document.getElementById('vdni').innerHTML='DNI no válido'
-                            }
-                            else{
-                                if(pass==""){
-                                document.getElementById('vcontra').innerHTML='Debe introducir una contraseña';
-                                }
-                                else{
-                                    if(pass.length<8){
-                                        document.getElementById('vcontra2').innerHTML='Su contraseña debe contener mínimo 8 caracteres de largo'
-                                    }
-                                    
-                                    else{
-                                        if(pass2==""){
-                                        document.getElementById('vcontra2').innerHTML='Debe introducir otra vez su contraseña';
-                                        }
-                                        else{
-                                            if(pass2!=pass){
-                                            document.getElementById('vcontra2').innerHTML='Su contraseña no coincide';
-                                            }
-                                                
-                                            else{
-                                                let Usuario = nombre[0]+nombre[1]+apellido[0]+apellido[1]+tel[tel.length-3]+tel[tel.length-2]+tel[tel.length-1]
-                                                alert('Su usuario es '+Usuario)
+                document.getElementById('vcontra').innerHTML='';
 
-                                            }
-                                        }
-                                
-                                    }
-                                    
-                                }
-
-
-                               
-                            }
-                        }
-                    } 
-                }
             }
-        }
+                                    
+            }
+            if(pass2==""){
+                document.getElementById('vcontra2').innerHTML='Debe introducir otra vez su contraseña';
+            }
+            else{
+                if(pass2!=pass){
+                    document.getElementById('vcontra2').innerHTML='Su contraseña no coincide';
+                }
+                else{
+                document.getElementById('vcontra2').innerHTML='';
+
+            }
+                                                
+               
+                                        
+            }
+            
+            perfil();
+         }
+
+         function perfil(){
+            let Usuario = nombre[0]+nombre[1]+apellido[0]+apellido[1]+tel[tel.length-3]+tel[tel.length-2]+tel[tel.length-1];
+                    alert('Su usuario es '+Usuario);
+         }
+
+         function valEmail(valor){
+            if (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(valor))
+    {   
+        
+        document.getElementById('vemail').innerHTML="";
+        validaCorreo=1;
+    } 
+    else 
+    {
+        validaCorreo=0;
+        
+        document.getElementById('vemail').innerHTML="Formato de correo erróneo"
+    }
+         }
+
+
+                   
     </script>
 
 
