@@ -24,6 +24,12 @@
     <script>
 
 
+          
+
+            
+
+        function validar(){
+
             var nombre=document.getElementById('nombre').value;
             var apellido=document.getElementById('apellido').value;
             var email=document.getElementById('email').value;
@@ -40,10 +46,6 @@
             var correoOK=0;
             var pass2OK=0;
 
-            
-
-        function validar(){
-
             document.getElementById('vnombre').innerHTML='';
             document.getElementById('vapellido').innerHTML='';
             document.getElementById('vdireccion').innerHTML='';
@@ -52,6 +54,31 @@
             document.getElementById('vdni').innerHTML='';
             document.getElementById('vcontra').innerHTML='';
             document.getElementById('vcontra2').innerHTML='';
+
+
+         function perfil(){
+            if(nomOK==1 && apellOK==1 && dniOK==1 &&  correoOK==1 && passOK==1 && pass2OK==1){
+            let Usuario = nombre[0]+nombre[1]+apellido[0]+apellido[1]+tel[tel.length-3]+tel[tel.length-2]+tel[tel.length-1];
+                    alert('Su usuario es '+Usuario);
+            }
+         }
+
+         function valEmail(valor){
+            if (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(valor))
+    {   
+        
+        document.getElementById('vemail').innerHTML="";
+        correoOK=1;
+      
+    } 
+    else 
+    {
+        correoOK=0;
+        
+        document.getElementById('vemail').innerHTML="Formato de correo erróneo"
+    }
+         }
+
 
             
 
@@ -124,7 +151,7 @@
                 }
                                     
             }
-            if(dcoument.getElementById('contra2').value==""){
+            if(document.getElementById('contra2').value==""){
                 document.getElementById('vcontra2').innerHTML='Debe introducir otra vez su contraseña';
             }
             else{
@@ -143,29 +170,6 @@
             }
             
             perfil();
-         }
-
-         function perfil(){
-            if(nomOK==1 && apellOK==1 && dniOK==1 &&  correoOK==1 && passOK==1 && pass2OK==1){
-            let Usuario = nombre[0]+nombre[1]+apellido[0]+apellido[1]+tel[tel.length-3]+tel[tel.length-2]+tel[tel.length-1];
-                    alert('Su usuario es '+Usuario);
-            }
-         }
-
-         function valEmail(valor){
-            if (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(valor))
-    {   
-        
-        document.getElementById('vemail').innerHTML="";
-        correoOK=1;
-      
-    } 
-    else 
-    {
-        correoOK=0;
-        
-        document.getElementById('vemail').innerHTML="Formato de correo erróneo"
-    }
          }
 
 
