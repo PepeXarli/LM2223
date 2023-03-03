@@ -13,15 +13,20 @@
     <label for="">Clave</label> <input type="text" name="" id="clave" placeholder="Clave">
     <label for="">Valor</label> <input type="text" name="" id="valor" placeholder="Valor">
     <button onclick="guardar()">GUARDAR</button>
+    <button onclick="escribir()">ESCRIBIR LOS DATOS GUARDADOS</button>
 
     <p id="demo"></p>
 
     <script>
         function guardar(){
-            localStorage.setItem(document.getElementById('clave').value, document.getElementById('valor').value);
+            localStorage.setItem("clave", document.getElementById('clave').value);
+            localStorage.setItem("valor", document.getElementById('valor').value);
 
             document.getElementById('demo').innerHTML='La pareja de clave: '+document.getElementById('clave').value+' con valor '+localStorage.getItem(document.getElementById('clave').value);
         }
+
+        function escribir(){
+            document.getElementById('demo').innerHTML='La pareja de clave: '+localStorage.getItem("clave")+' con valor '+localStorage.getItem("valor");        }
     </script>
 
     
