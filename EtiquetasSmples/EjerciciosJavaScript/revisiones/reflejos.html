@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflejos</title>
+
+    <style>
+        #forma{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 50px;
+            left: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1>¡COMPRUEBA TUS REFLEJ0S!</h1>
+
+        <h2>Haz click en los cuadrados y circulos tan rápido como puedas</h2>
+
+        <p>Tiempo de reacción: <span id="tiempo"></span></p>
+    </div>
+    <div id="forma"></div>
+
+    <script>
+        function cambiarColor(){
+            let opciones= '0123456789ABCDEF'.split('');
+            let color='#';
+            
+            for(let i=0; i=5; i++){
+                color += Math.round(Math.random()*16);
+            }
+            return color;
+        }
+
+        function aparecerForma(){
+            let top=Math.random()*400;
+            let left=Math.random()*400;
+            let widht=(Math.random()*300)+50;
+            let forma=Math.random();
+
+            if(forma>0.5){
+                document.getElementById('forma').style.borderRadius='50%';
+            }
+            else{
+                document.getElementById('forma').style.borderRadius='0%';
+            }
+
+        document.getElementById('forma').style.top = top+'px';
+        document.getElementById('forma').style.left = left+'px';
+
+        document.getElementById('forma').style.width = widht+'px';
+        document.getElementById('forma').style.height = widht+'px';
+
+        document.getElementById('forma').style.backgroundColor= cambiarColor();
+        document.getElementById('forma').style.display='block';
+
+        let inicio =new Date().getTime();
+        }
+
+        function aparecerFormaDespuesRetraso(){
+            setTimeout(aparecerForma, Math.random()*2000);
+        }
+
+        aparecerFormaDespuesRetraso()
+
+        function tiempo(){
+            let final= new Date().getTime();
+            let tiempo= (final-inicio)/1000;
+        }
+
+        
+
+    </script>
+
+</body>
+</html>
