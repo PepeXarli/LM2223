@@ -21,7 +21,7 @@
 <body>
     
     <div>
-        <h1>¡COMPRUEBA TUS REFLEJ0S!</h1>
+        <h1>¡COMPRUEBA TUS REFLEJOS!</h1>
 
         <h2>Haz click en los cuadrados y circulos tan rápido como puedas</h2>
 
@@ -30,12 +30,16 @@
     <div id="forma"></div>
 
     <script>
+
+       var inicio= new Date().getTime();
+
+
         function cambiarColor(){
             let opciones= '0123456789ABCDEF'.split('');
             let color='#';
-            
-            for(let i=0; i=5; i++){
-                color += Math.round(Math.random()*16);
+            let i=0
+            for(i=0; i<6; i++){
+                color += opciones[Math.round(Math.random()*16)];
             }
             return color;
         }
@@ -44,25 +48,24 @@
             let top=Math.random()*400;
             let left=Math.random()*400;
             let widht=(Math.random()*300)+50;
-            let forma=Math.random();
 
-            if(forma>0.5){
+            if(Math.random()>0.5){
                 document.getElementById('forma').style.borderRadius='50%';
             }
             else{
                 document.getElementById('forma').style.borderRadius='0%';
             }
 
-        document.getElementById('forma').style.top = top+'px';
-        document.getElementById('forma').style.left = left+'px';
+            document.getElementById('forma').style.top = top + 'px';
+            document.getElementById('forma').style.left = left + 'px';
 
-        document.getElementById('forma').style.width = widht+'px';
-        document.getElementById('forma').style.height = widht+'px';
+            document.getElementById('forma').style.width = widht + 'px';
+            document.getElementById('forma').style.height = widht + 'px';
 
-        document.getElementById('forma').style.backgroundColor= cambiarColor();
-        document.getElementById('forma').style.display='block';
+            document.getElementById('forma').style.backgroundColor= cambiarColor();
+            document.getElementById('forma').style.display='block';
 
-        let inicio =new Date().getTime();
+            inicio =new Date().getTime();
         }
 
         function aparecerFormaDespuesRetraso(){
@@ -71,10 +74,16 @@
 
         aparecerFormaDespuesRetraso()
 
-        function tiempo(){
+        document.getElementById('forma').onclick= function(){
+            
             let final= new Date().getTime();
-            let tiempo= (final-inicio)/1000;
-        }
+            document.getElementById('forma').style.display='none';
+            let diferencia= (final-inicio)/1000;
+            document.getElementById('tiempo').innerHTML= diferencia +'s';
+            aparecerFormaDespuesRetraso();
+        
+        };
+
 
         
 
