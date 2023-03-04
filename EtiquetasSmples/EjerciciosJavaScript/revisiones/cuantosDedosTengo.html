@@ -21,7 +21,7 @@
         function adivina(){
 
             let num=document.getElementById('numero').value;
-            let ran=Math.floor(Math.random()*5);
+            let ran=Math.ceil(Math.random()*5);
             if(num<1 || num>5){
                 alert('El número debe estar comprendido entre 1 y 5');
             }
