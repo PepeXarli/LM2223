@@ -26,12 +26,24 @@
         <h2>Haz click en los cuadrados y circulos tan rápido como puedas</h2>
 
         <p>Tiempo de reacción: <span id="tiempo"></span></p>
+
+        <p>Tiempo record: <span id="tiempoRecord"></span></p>
     </div>
     <div id="forma"></div>
 
     <script>
 
        var inicio= new Date().getTime();
+        var record
+
+        function record(){
+            if(localStorage.getItem('record')!=undefined){
+            record=localStorage.getItem('record');
+            document.getElementById('tiempoRecord').innerHTML=record;
+            }
+        }
+        record();
+
 
 
         function cambiarColor(){
@@ -80,11 +92,22 @@
             document.getElementById('forma').style.display='none';
             let diferencia= (final-inicio)/1000;
             document.getElementById('tiempo').innerHTML= diferencia +'s';
+            if(record==undefined){
+                localStorage.setItem('record', diferencia);
+                record= localStorage.getItem('record');
+                document.getElementById('tiempoRecord').innerHTML= record;
+            }
+            else if(diferencia<record){
+                localStorage.setItem('record', diferencia);
+                record= localStorage.getItem('record');
+
+                document.getElementById('tiempoRecord').innerHTML=record;
+            }
             aparecerFormaDespuesRetraso();
         
         };
 
-
+        
         
 
     </script>
