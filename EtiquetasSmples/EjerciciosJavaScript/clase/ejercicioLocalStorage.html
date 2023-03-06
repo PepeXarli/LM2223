@@ -21,6 +21,7 @@
         function guardar(){
             localStorage.setItem("clave", document.getElementById('clave').value);
             localStorage.setItem("valor", document.getElementById('valor').value);
+            localStorage.setItem(clave,valor);
 
             document.getElementById('demo').innerHTML='La pareja de clave: '+document.getElementById('clave').value+' con valor '+localStorage.getItem(document.getElementById('clave').value);
         }

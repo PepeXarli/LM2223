@@ -26,25 +26,38 @@
             let triples=0;
 
             if(adultos<=0){
-                document.getElementById('resultado').innerHTML='Debe ir al menos un adulto'
+                document.getElementById('resultado').innerHTML='Debe ir al menos un adulto';
                 
             }
             else if(adultos==1 || adultos==2){
                 if(ninos==0){
-                    document.getElementById('resultado').innerHTML='Necesita una habitación doble'
+                    document.getElementById('resultado').innerHTML='Necesita una habitación doble';
                 }
                 else if(ninos==1){
-                    document.getElementById('resultado').innerHTML='Necesita una habitación doble con supletoria'
+                    document.getElementById('resultado').innerHTML='Necesita una habitación doble con supletoria';
                 }
-                else if(ninos>1 && ninos<=3){
-                    document.getElementById('resultado').innerHTML='Necesita una habitación familiar'
+                else if(ninos>1 && ninos<3){
+                    document.getElementById('resultado').innerHTML='Necesita una habitación familiar';
                 }
-                else if(ninos>3){
-                    document.getElementById('resultado').innerHTML='Búsquese un canguro y disfrute de las vacaciones en condiciones'
+                else if(ninos>=3){
+                    document.getElementById('resultado').innerHTML='Búsquese un canguro y disfrute de las vacaciones en condiciones';
                 }
             }
             else if(adultos==3){
-                document.getElementById('resultado').innerHTML='Necesita una habitación triple'
+                if(ninos==0){
+                document.getElementById('resultado').innerHTML='Necesita una habitación triple';
+                }
+                else if(ninos==1){
+                    document.getElementById('resultado').innerHTML='Necesita dos habitaciones dobles';
+                }
+                else if(ninos==2){
+                    document.getElementById('resultado').innerHTML='Necesita dos habitaciones dobles, una con supletoria';
+
+                }
+                else if(ninos>2){
+                    document.getElementById('resultado').innerHTML='Búsquese un canguro y disfrute de las vacaciones en condiciones';
+
+                }
             }
             else if(adultos>3){
                 if(ninos==0){
@@ -87,6 +100,10 @@
                             document.getElementById('resultado').innerHTML='Necesita '+dobles+' dobles y una familiar';
                         }
                     }
+                }
+
+                else if(ninos>=3){
+                    document.getElementById('resultado').innerHTML='Búsquese un canguro y disfrute de las vacaciones en condiciones'
                 }
                 
                          

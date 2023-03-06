@@ -34,12 +34,12 @@
     <script>
 
        var inicio= new Date().getTime();
-        var record
+        var recordd
 
         function record(){
             if(localStorage.getItem('record')!=undefined){
-            record=localStorage.getItem('record');
-            document.getElementById('tiempoRecord').innerHTML=record;
+            recordd=localStorage.getItem('record');
+            document.getElementById('tiempoRecord').innerHTML=recordd;
             }
         }
         record();
@@ -92,16 +92,16 @@
             document.getElementById('forma').style.display='none';
             let diferencia= (final-inicio)/1000;
             document.getElementById('tiempo').innerHTML= diferencia +'s';
-            if(record==undefined){
+            if(recordd==undefined){
                 localStorage.setItem('record', diferencia);
-                record= localStorage.getItem('record');
-                document.getElementById('tiempoRecord').innerHTML= record;
+                recordd= localStorage.getItem('record');
+                document.getElementById('tiempoRecord').innerHTML= recordd;
             }
-            else if(diferencia<record){
+            else if(diferencia<recordd){
                 localStorage.setItem('record', diferencia);
-                record= localStorage.getItem('record');
+                recordd= localStorage.getItem('record');
 
-                document.getElementById('tiempoRecord').innerHTML=record;
+                document.getElementById('tiempoRecord').innerHTML=recordd;
             }
             aparecerFormaDespuesRetraso();
         
