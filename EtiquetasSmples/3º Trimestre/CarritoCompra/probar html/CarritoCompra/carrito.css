@@ -73,5 +73,6 @@ p {
     width: 6%;
     height:fit-content;
     margin: 5px;
+    cursor:pointer;
 }
 
