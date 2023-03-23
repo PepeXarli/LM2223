@@ -12,3 +12,17 @@ function restar(a){
     }
     document.getElementById(a).innerHTML=b;
 }
+
+function carrito(){
+    var menu=document.getElementById('menucarrito');
+    var producto=document.getElementById('producto');
+    if(menu.style.width=='0%'){
+        menu.style.width='35%';
+    }
+    else{
+        menu.style.width='0%';
+        document.getElementsByClassName('producto').style.display='none';
+
+    }
+
+}
