@@ -3,6 +3,12 @@ function sumar(a){
     b++;
     document.getElementById(a).innerHTML=b;
 }
+/*
+function sumar(a){
+    b=parseInt(document.getElementsByClassName(a).innerHTML);
+    b++;
+    document.getElementById(a).innerHTML=b;
+}*/
 
 function restar(a){
     b=parseInt(document.getElementById(a).innerHTML);
