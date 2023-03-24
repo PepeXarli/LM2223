@@ -11,11 +11,10 @@ var carro = [
 
 
 function sumar(a){
-
     let producto=carro[a];
     producto['uds']++;
     carro[a]=producto;
-    document.getElementById('id'+a).value=producto['uds'];
+    document.getElementById('id'+a).innerHTML=producto['uds'];
 }
 /*
 function sumar(a){
