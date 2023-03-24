@@ -60,23 +60,34 @@ button>img {
 
 }
 
+#lista>div{
+    margin: 5%;
+}
+
+#lista>div>img{
+    width: 20% ;
+    height: auto;
+}
+
+
 #comprar {
-    display: none;
     cursor: pointer;
     position: absolute;
     bottom: 3%;
     margin-left: 42%;
     height: 30px;
 }
-/*
-#menucarrito>.producto{
-    width: 95%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}*/
+
+
+
+#lista{
+    color: red;
+}
+
+
+
+
+
 
 
 #container {

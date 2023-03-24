@@ -15,13 +15,8 @@ function sumar(a){
     carro[a]=producto;
     document.getElementById('id'+a).innerHTML=producto['uds'];
     localStorage.setItem('carro', JSON.stringify(carro));
+    refrescar();
 }
-/*
-function sumar(a){
-    b=parseInt(document.getElementsByClassName(a).innerHTML);
-    b++;
-    document.getElementById(a).innerHTML=b;
-}*/
 
 function restar(a){
     let producto=carro[a];
@@ -31,6 +26,7 @@ function restar(a){
     }
     document.getElementById('id'+a).innerHTML=producto['uds'];
     localStorage.setItem('carro', JSON.stringify(carro));
+    refrescar();
 }
 
 function carrito(){
@@ -38,11 +34,32 @@ function carrito(){
     /*var producto=document.getElementById('producto');*/
     if(menu.style.left=='-35.5%'){
         menu.style.left='0%';
-        document.getElementById("comprar").style.display= 'block';
     }
     else{
         menu.style.left='-35.5%';
-        document.getElementById("comprar").style.display= 'none';
     }
 
+}
+
+function refrescar(){
+    let listaCompra=document.getElementById('lista')
+    listaCompra.innerHTML='';
+    let total=0;
+
+    for(let i=0;i<carro.length;i++){
+        
+        let producto=carro[i];
+        if(producto['uds']>0){
+            let nodo=document.createElement('div');
+            let img=document.createElement('img');
+            img.src=i+'.png';
+            let texto=document.createTextNode(' '+producto['precio']+' '+ producto['uds']);
+            document.getElementById('id'+i).innerHTML=producto['uds'];
+            let full=img+texto
+            nodo.appendChild(full);
+            listaCompra.appendChild(nodo);
+            total=total+producto['uds']*producto['precio'];
+        }
+    }
+    document.getElementById('total').innerHTML = 'Total: ';
 }
