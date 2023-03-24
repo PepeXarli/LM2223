@@ -44,20 +44,21 @@ button>img {
 }
 
 #menucarrito{
-    width: 0%;
+    width: 35.5%;
     height: 155%;
     opacity:90%;
+    position:absolute;
+    left:-35.5%;
+    top: 8%;
     display: flex;
-    margin-top: 57%;
     background-color: darkgray;
     justify-content: start;
     border-top-right-radius:15px ;
     border-bottom-right-radius:15px ;
-    transition: width 1s;
+    transition: left 1s;
     margin-right: 0.5%;
 
 }
-
 /*
 #menucarrito>.producto{
     width: 95%;

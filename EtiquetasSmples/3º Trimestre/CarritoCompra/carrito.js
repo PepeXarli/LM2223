@@ -21,13 +21,12 @@ function restar(a){
 
 function carrito(){
     var menu=document.getElementById('menucarrito');
-    var producto=document.getElementById('producto');
-    if(menu.style.width=='0%'){
-        menu.style.width='35%';
+    /*var producto=document.getElementById('producto');*/
+    if(menu.style.left=='-35.5%'){
+        menu.style.left='0%';
     }
     else{
-        menu.style.width='0%';
-        document.getElementsByClassName('producto').style.display='none';
+        menu.style.left='-35.5%';
 
     }
 
