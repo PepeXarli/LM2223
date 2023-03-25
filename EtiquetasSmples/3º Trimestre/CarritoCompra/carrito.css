@@ -45,7 +45,7 @@ button>img {
 
 #menucarrito{
     width: 35.5%;
-    height: 155%;
+    height: 92%;
     opacity:90%;
     position:absolute;
     left:-35.5%;
@@ -62,6 +62,12 @@ button>img {
 
 #lista>div{
     margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    Font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-size: 25px;
+    font-weight: 200;
 }
 
 #lista>div>img{
@@ -74,19 +80,23 @@ button>img {
     cursor: pointer;
     position: absolute;
     bottom: 3%;
-    margin-left: 42%;
+    margin-left: 38%;
     height: 30px;
 }
 
+#total {
+    cursor: pointer;
+    position: absolute;
+    bottom: 8.5%;
+    margin-left: 30%;
+    color: red;
+
+}
 
 
 #lista{
     color: red;
 }
-
-
-
-
 
 
 
