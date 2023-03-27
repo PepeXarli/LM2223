@@ -75,5 +75,7 @@ function iniciar(){
             refrescar();
     }
 }
-
+function comprar() {
+    window.location.assign("formulariocarro.html");
+}
 

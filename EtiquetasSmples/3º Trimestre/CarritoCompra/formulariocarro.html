@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra | PC MANIA</title>
+    <link rel="stylesheet" href="formulariocarro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+</head>
+<body>
+    <header>
+        <button id="carrito" onclick="carrito()"><img src="carrito-de-compras.png" alt=""></button>
+        <p class="titu">PC MANIA</p>
+    </header>
+
+    <div id="container">
+        <div class="apart">
+            <h1>DATOS DEL COMPRADOR</h1>
+                <div>
+                    <form action="get">
+                        <label for="nombre">Nombre: </label><input type="text" id="nombre" placeholder="Nombre"><p id="vnombre"></p>
+                        <label for="apellido">Apellidos: </label><input type="text" id="apellido" placeholder="Apellido"><p id="vapellido"></p>
+                        <label for="mail">Correo electrónico: </label><input type="text" id="mail" placeholder="Email"><p id="vmail"></p>
+                        <label for="telef">Teléfono: </label><input type="text" id="telef" placeholder="Teléfono">
+                    </form>
+                </div>
+        </div>
+
+        <div class="apart">
+            <h1>DIRECCIÓN DE ENVÍO</h1>
+                <div>
+                    <form action="get">
+                        <label for="municipio">Municipio: </label><input type="text" id="municipio"><p id="vmunicipio"></p>
+                        <label for="cp">CP: </label><input type="text" id="cp"><p id="vcp"></p>
+                        <label for="direccion">Dirección: </label><input type="text" id="direccion"><p id="vdireccion"></p>
+                    </form>
+                </div>
+        </div>
+
+        <div class="apart">
+            <h1>DATOS DE PAGO</h1>
+                <div></div>  
+        </div>
+    </div>
+</body>
+</html>
