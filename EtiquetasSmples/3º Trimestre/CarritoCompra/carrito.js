@@ -62,6 +62,7 @@ function refrescar(){
             nodo.appendChild(span2);
             listaCompra.appendChild(nodo);
             total=total+producto['uds']*producto['precio'];
+            localStorage.setItem('total',total);
         }
     }
     document.getElementById('total').innerHTML = 'Total: ' + total.toFixed(2)+'€';

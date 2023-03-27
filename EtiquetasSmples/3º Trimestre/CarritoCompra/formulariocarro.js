@@ -1,3 +1,5 @@
+document.getElementById('precio').innerHTML=localStorage.getItem('total');
+
 function  validar()  {
     /*Variables necesarias*/
     var  nombre = document.getElementById("nombre").value;
@@ -13,7 +15,7 @@ function  validar()  {
     var validmail =/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     var dig=/^[0-9]+$/;
     var validvisa=/^4\d{3}-?\d{4}-?\d{4}-?\d{4}$/;
-    var validmastercard=/^5[1-5][0-9]{2}-?[0-9]{4}-?[0-9]{4}-?[0-9]   {4}$/;
+    var validmastercard=/^5[1-5]\d{2}-?\d{4}-?\d{4}-?\d{4}$/;
     var fecha= /^\d{2}\/\d{2}$/;
     var vcvv=/^[0-9]{3,3}$/;
 
