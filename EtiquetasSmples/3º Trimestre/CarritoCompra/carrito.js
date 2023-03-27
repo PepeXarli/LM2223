@@ -10,7 +10,7 @@ var carro = [
 
 iniciar();
 
-function sumar(a){
+    function sumar(a){
     let producto=carro[a];
     producto['uds']++;
     carro[a]=producto;
@@ -73,10 +73,7 @@ function iniciar(){
         if(almacenado!=null){
             almacenado=JSON.parse(almacenado);
             carro=almacenado;
-            for(let i=0; i<carro.length; i++){
-                let producto=carro[i];
-                document.getElementById('id'+i).innerHTML=producto['uds'];
-            }
+
             refrescar();
     }
 }

@@ -10,8 +10,8 @@ body {
     background: url(fondo.jpg); 
     background-size: cover;
     background-repeat:repeat;
-    height: 120vh;
     display: flex;
+    height: 120%;
     align-items: center;
     justify-content: center;
 
@@ -108,7 +108,7 @@ button>img {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 50%;
+    margin-top: 10%;
     box-shadow: 5px 5px 60px;
 }
 
@@ -123,7 +123,7 @@ button>img {
 }
 div > img {
     width: auto;
-    height:50%;
+    height:40%;
 }
 
 p {
