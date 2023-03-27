@@ -8,8 +8,6 @@ var carro = [
 
 ]
 
-iniciar();
-
     function sumar(a){
     let producto=carro[a];
     producto['uds']++;
