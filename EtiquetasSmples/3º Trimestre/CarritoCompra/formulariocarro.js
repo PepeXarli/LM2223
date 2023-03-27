@@ -12,7 +12,7 @@ function  validar()  {
     var cvv = document.getElementById("cvv").value;
     var validmail =/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     var dig=/^[0-9]+$/;
-    var validvisa=/^4[0-9]{3}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$/;
+    var validvisa=/^4\d{3}-?\d{4}-?\d{4}-?\d{4}$/;
     var validmastercard=/^5[1-5][0-9]{2}-?[0-9]{4}-?[0-9]{4}-?[0-9]   {4}$/;
     var fecha= /^\d{2}\/\d{2}$/;
     var vcvv=/^[0-9]{3,3}$/;
@@ -86,8 +86,6 @@ function  validar()  {
     if (tarj==visa) {
         if (numtarj=="") {
             document.getElementById("vnumtarj").innerHTML= "Este campo es obligatorio";
-            document.getElementById("vcaducidad").innerHTML= "Este campo es obligatorio";
-            document.getElementById("vcvv").innerHTML= "Este campo es obligatorio";
         } else if (validvisa.test(numtarj)){
             document.getElementById("vnumtarj").innerHTML= "";
         } else {
@@ -97,8 +95,6 @@ function  validar()  {
     if (tarj==mastercard) {
         if (numtarj=="") {
             document.getElementById("vnumtarj").innerHTML= "Este campo es obligatorio";
-            document.getElementById("vcaducidad").innerHTML= "Este campo es obligatorio";
-            document.getElementById("vcvv").innerHTML= "Este campo es obligatorio";
         } else if (validmastercard.test(numtarj)){
             document.getElementById("vnumtarj").innerHTML= "";
         } else {
@@ -126,3 +122,4 @@ function  validar()  {
 
     }
 }
+

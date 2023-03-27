@@ -96,3 +96,8 @@ h1{
 #vnombre, #vapellido, #vmail, #vtelef, #vmunicipio, #vcp, #vdireccion, #vtarj, #vnumtarj, #vcaducidad, #vcvv {
     color: #d71515;
 }
+
+
+input[type="radio"]{
+    margin-right:5% ;
+}
