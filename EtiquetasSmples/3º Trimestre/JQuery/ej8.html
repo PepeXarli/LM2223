@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        
+        $(document).ready(function(){
+            
+            $('#img').click(function(){
+                alert('Src: '+ $('img').attr('src'))
+            });
+            $('#h1').click(function(){
+                alert('Html: '+ $('h1').html())
+            });
+            $('#p').click(function(){
+                alert('Html: '+ $('p').html())
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p >Un <b> Lorem</b></p>
+    <img src="descarga icon.png" alt="">
+    <a href="Esto">esto no funciona pero we</a>
+    <h2>msvn</h2>
+    <button id="img">Obtener scr de la imagen</button>
+    <button id="h1">Obtener html del encabezado</button>
+
+    <button id="p">Obtener html de un párrafo</button>
+
+
+</body>
+</html>
