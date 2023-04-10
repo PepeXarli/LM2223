@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        $(document).ready(function(){
+            $('#oc-par').click(function(){
+                $('p:odd').hide();
+            });
+            $('#ens-par').click(function(){
+                $('p:odd').show();
+            });
+            $('#oc-impar').click(function(){
+                $('p:even').hide();
+            });
+            $('#ens-impar').click(function(){
+                $('p:even').show();
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p class="1">Párrafo 1</p>
+    <p class="2">Un Lorem</p>
+    <p class="1">Otro Lorem</p>
+    <p class="2">Y Otro Lorem</p>
+    <p class="1">Another Lorem</p>
+    <p class="2">ultimo Lorem</p>
+    <button id="oc-par">Clic aquí para ocultar párrafos pares</button>
+    <button id="oc-impar">Clic aquí para ocultar párrafos impares</button>
+    <button id="ens-par">Clic aquí para enseñar los párrafos pares de nuevo</button>
+    <button id="ens-impar">Clic aquí para enseñar los párrafos impares de nuevo</button>
+</body>
+</html>

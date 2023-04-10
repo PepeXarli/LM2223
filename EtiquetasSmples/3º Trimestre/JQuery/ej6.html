@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        
+        $(document).ready(function(){
+            
+            $('button').click(function(){
+                alert($('p').length + ' párrafos, '+$('h1').length+' titulos y '+$('a').length+' enlaces')
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p >Párrafo 1</p>
+    <p >Un Lorem</p>
+    <img src="descarga icon.png" alt="">
+    <h1>uno mas pa q cuente</h1>
+    <a href="Esto">esto no funciona pero we</a>
+    <button>Contar</button>
+
+</body>
+</html>

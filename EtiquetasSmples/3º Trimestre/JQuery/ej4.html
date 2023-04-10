@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        
+        $(document).ready(function(){
+            
+            $('#mas').click(function(){
+                $('p').css({'font-size':'+=10', 'color':'red' });
+            });
+
+            $('#menos').click(function(){
+                $('p').css({'font-size':'-=10','color':'blue' });
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p >Párrafo 1</p>
+    <p >Un Lorem</p>
+    <p >Otro Lorem</p>
+    <p >Y Otro Lorem</p>
+    <p >Another Lorem</p>
+    <p >ultimo Lorem</p>
+    <button id="mas">Más tamaño</button>
+    <button id="menos">Menos tamaño</button>
+
+</body>
+</html>

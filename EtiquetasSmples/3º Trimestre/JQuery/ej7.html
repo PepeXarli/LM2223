@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        
+        $(document).ready(function(){
+            
+            $('button').click(function(){
+                if($('h2').length>0){
+                    alert('SÍ  existen subtítulos');
+                }
+                else{
+                    alert('NO  existen subtítulos');
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p >Párrafo 1</p>
+    <p >Un Lorem</p>
+    <img src="descarga icon.png" alt="">
+    <h1>uno mas pa q cuente</h1>
+    <a href="Esto">esto no funciona pero we</a>
+    <h2>msvn</h2>
+    <button>¿Existen subtítulos?</button>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        $(document).ready(function(){
+            $('#par').click(function(){
+                $('p:odd').toggle();
+            });
+
+            $('#impar').click(function(){
+                $('p:even').toggle();
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h1>Mi primer jQuery</h1>
+    <p >Párrafo 1</p>
+    <p >Un Lorem</p>
+    <p >Otro Lorem</p>
+    <p >Y Otro Lorem</p>
+    <p >Another Lorem</p>
+    <p >ultimo Lorem</p>
+    <button id="par">Clic aquí para ocultar o mostrar párrafos pares</button>
+    <button id="impar">Clic aquí para ocultar o mostrar párrafos impares</button>
+
+</body>
+</html>

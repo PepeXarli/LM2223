@@ -58,6 +58,7 @@ button>img {
     border-bottom-right-radius:15px ;
     transition: left 1s;
     margin-right: 0.5%;
+    background-color: red;
 
 }
 
