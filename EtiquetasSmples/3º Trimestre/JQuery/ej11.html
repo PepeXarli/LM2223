@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <script src="jquery-3.6.4.js"></script>
+    <script>
+        //Esto sirve para que jQuery espere a que se cargue todo el documento
+        
+        $(document).ready(function(){
+            
+            $('button').click(function(){
+                $('div').empty()
+            });
+
+        });
+
+    </script>
+
+    <style>
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Hola buenas</div> <br>
+
+    <button>Vaciar cuadrado</button>
+
+
+</body>
+</html>
