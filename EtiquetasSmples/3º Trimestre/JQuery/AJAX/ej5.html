@@ -9,45 +9,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
   <body>
-    <h1>GENERAR FOTO DE PELICULA DE OMDBAPI</h1>
+    <h1>LIBRO DE GOOGLE BOOKS</h1>
     <div class="container">
-        <input type="text" id="pelicula">
-      <button>Generar</button> <br> <br>
-        <img src="" id="imagen">
-        
+        <input type="text" id="usuario">
+      <button>Generar</button> <br> <br>        
         <div id="objetivo"></div>
     </div>
     <script>
-        /* Completar el código jQuery aquí */
         
 
         $('button').click(function(){
-        let titulo=$('#pelicula').val();
-        let API_key = 'd029f924';
+        let usuario=$('#usuario').val();
         
 
       
           
           $.ajax({
-            url:`http://www.omdbapi.com/?apikey=${API_key}&t=`+titulo,
+            url:`https://api.github.com/users/`+usuario,
             success: function(r) {
-              if(r.Response==="True"){
+              
                 console.log(r);
                 $('#objetivo').html(`
-                <h2>${r.Title}(${r.Year})</h2>
-                <img src='${r.Poster}'>
-                <p>Actores: ${r.Actors}</p>
-                <p>Resumen: ${r.Plot}</p>
-                  `)}
+                <h2>${r.login}</h2>
+                <img src='${r.avatar_url}'>
+                <p>Seguidores: ${r.followers}</p>
+                <p>Siguiendo: ${r.following}</p>
+                  `)
 
             }
 
 
         })
         })
-      
-
- 
 
         
     </script>
