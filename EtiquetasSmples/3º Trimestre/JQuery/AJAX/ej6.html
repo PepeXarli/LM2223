@@ -32,10 +32,9 @@
               
                 console.log(r);
                 $('#objetivo').html(`
-                <h2>${r.login}</h2>
-                <img src='${r.avatar_url}'>
-                <p>Seguidores: ${r.followers}</p>
-                <p>Siguiendo: ${r.following}</p>
+                <h2>${r.photos.photo[0].title}</h2>
+                <img src='https://farm${r.photos.photo[0].farm}.staticflickr.com/${r.photos.photo[0].server}/${r.photos.photo[0].id}_${r.photos.photo[0].secret}.jpg'>
+                
                   `)
 
             }

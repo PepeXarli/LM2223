@@ -11,7 +11,7 @@
   <body>
     <h1>LIBRO DE GOOGLE BOOKS</h1>
     <div class="container">
-        <input type="text" id="usuario">
+        <input type="text" id="titulo">
       <button>Generar</button> <br> <br>        
         <div id="objetivo"></div>
     </div>
@@ -19,21 +19,23 @@
         
 
         $('button').click(function(){
-        let usuario=$('#usuario').val();
+        let titulo=$('#titulo').val();
+        let api='AIzaSyBGlkTnKgidU1WvpuCHtAZd6U58TCnnT0E';
         
 
       
           
           $.ajax({
-            url:`https://api.github.com/users/`+usuario,
+            url:`https://www.googleapis.com/books/v1/volumes?q=intitle:${titulo}&key=${api}`,
             success: function(r) {
               
                 console.log(r);
                 $('#objetivo').html(`
-                <h2>${r.login}</h2>
-                <img src='${r.avatar_url}'>
-                <p>Seguidores: ${r.followers}</p>
-                <p>Siguiendo: ${r.following}</p>
+                <h2>${r.items[0].volumeInfo.title}</h2>
+                <p>Autor(es): ${r.items[0].volumeInfo.authors}</p>
+                <p>Sinopsis: ${r.items[0].volumeInfo.description}</p>
+                <p>Precio: ${r.items[0].saleInfo.listPrice.amount} ${r.items[0].saleInfo.listPrice.currencyCode}</p>
+                <p>Link de compra: <a href='${r.items[0].saleInfo.buyLink}' target='_blank'>Compra aquí</a></p>
                   `)
 
             }
