@@ -27,22 +27,40 @@
           
           $.ajax({
             url:`https://www.googleapis.com/books/v1/volumes?q=intitle:${titulo}&key=${api}`,
+            
             success: function(r) {
               
+              let resultadoHTML='';
+              
                 console.log(r);
-                $('#objetivo').html(`
-                <h2>${r.items[0].volumeInfo.title}</h2>
-                <p>Autor(es): ${r.items[0].volumeInfo.authors}</p>
-                <p>Sinopsis: ${r.items[0].volumeInfo.description}</p>
-                <p>Precio: ${r.items[0].saleInfo.listPrice.amount} ${r.items[0].saleInfo.listPrice.currencyCode}</p>
-                <p>Link de compra: <a href='${r.items[0].saleInfo.buyLink}' target='_blank'>Compra aquí</a></p>
-                  `)
+
+                let libros=r.items;
+
+
+                if(libros){
+                  libros.forEach(function(libro){
+                    resultadoHTML+=`
+                      <h2>${libro.volumeInfo.title}</h2>
+                      <p>Autor(es): ${libro.volumeInfo.authors}</p>
+                      <p>Sinopsis: ${libro.volumeInfo.description}</p>
+                      <p>Link de compra: <a href='${libro.saleInfo.buyLink}' target='_blank'>Compra aquí</a></p>
+                      `
+                  });
+                }
+
+              $('#objetivo').html(resultadoHTML);
+
 
             }
-
+          })
 
         })
-        })
+
+          
+
+
+          
+        
 
         
     </script>
