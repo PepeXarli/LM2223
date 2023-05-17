@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://code.jquery.com/resources/demos/style.css">
     <!-- Es posible que aquí falte algo -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
     <style>
         body {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -62,6 +66,65 @@
      </div>
     <script>
         /* Aqui tenemos que desarrollar nuestro código */
+        $(document).ready(function() {
+            //DATEPICKER
+            $(function() {
+            $('#f_entrada').datepicker({
+            dateFormat: 'dd/mm/yy',
+            showButtonPanel: false,
+            changeMonth: false,
+            changeYear: false,
+            /*showOn: "button",
+            buttonImage: "images/calendar.gif",
+            buttonImageOnly: true,*/
+            minDate: '+1D',
+            maxDate: '+1Y',
+            inline: true
+            });
+            });
+            $.datepicker.regional['es'] = {
+                closeText: 'Cerrar',
+                prevText: '<Ant',
+                nextText: 'Sig>',
+                currentText: 'Hoy',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+                dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+            $.datepicker.setDefaults($.datepicker.regional['es']);
+            $('#f_salida').datepicker({minDate: '+1D',maxDate: '+1Y'});
+
+            $('#calculo').click(function(e) {
+                e.preventDefault();
+                let individual=$('#num_individuales').val()*25;
+                let dobles=$('#num_dobles').val()*45;
+                let triples=$('#num_triples').val()*80;
+                let entrada=$('#f_entrada').datepicker('getDate');
+                let salida=$('#f_salida').datepicker('getDate');
+
+                let dias= new Date((salida-entrada))/1000/60/60/24;
+                let precioTotal=individual*dias+dobles*dias+triples*dias;
+
+                $('#totalDias').html('Total días: '+dias);
+                $('#totalPrecio').html('Precio: '+precioTotal+' EUR')
+                
+
+            });
+            
+
+
+
+        });
+
+    
     </script>
 </body>
 </html>
