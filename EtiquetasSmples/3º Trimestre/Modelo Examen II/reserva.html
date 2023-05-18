@@ -65,43 +65,45 @@
         </form>
      </div>
     <script>
-        /* Aqui tenemos que desarrollar nuestro código */
-        $(document).ready(function() {
-            //DATEPICKER
-            $(function() {
-            $('#f_entrada').datepicker({
-            dateFormat: 'dd/mm/yy',
-            showButtonPanel: false,
-            changeMonth: false,
-            changeYear: false,
-            /*showOn: "button",
-            buttonImage: "images/calendar.gif",
-            buttonImageOnly: true,*/
-            minDate: '+1D',
-            maxDate: '+1Y',
-            inline: true
-            });
-            });
-            $.datepicker.regional['es'] = {
-                closeText: 'Cerrar',
-                prevText: '<Ant',
-                nextText: 'Sig>',
-                currentText: 'Hoy',
-                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
-                dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
-                weekHeader: 'Sm',
-                dateFormat: 'dd/mm/yy',
-                firstDay: 1,
-                isRTL: false,
-                showMonthAfterYear: false,
-                yearSuffix: ''
-            };
-            $.datepicker.setDefaults($.datepicker.regional['es']);
-            $('#f_salida').datepicker({minDate: '+1D',maxDate: '+1Y'});
 
+
+   
+
+        $(function() {
+            var dateFormat = "mm/dd/yy",
+                from = $("#f_entrada").datepicker({
+                    defaultDate: "+1w",
+                    minDate: "+1D",
+                    maxDate: "+364D",
+                    numberOfMonths: 1
+                }).on("change", function() {
+                    var selectedDate = getDate(this);
+                    if (selectedDate) {
+                        var minDate = new Date(selectedDate);
+                        minDate.setDate(minDate.getDate() + 1);
+                        to.datepicker("option", "minDate", minDate);
+                    }
+                }),
+                to = $("#f_salida").datepicker({
+                    defaultDate: "+2w",
+                    minDate: "+2D",
+                    maxDate: "+365D",
+                    numberOfMonths: 1
+                }).on("change", function() {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+                return date;
+            }
+        });
+    
             $('#calculo').click(function(e) {
                 e.preventDefault();
                 let individual=$('#num_individuales').val()*25;
@@ -122,7 +124,7 @@
 
 
 
-        });
+     ;
 
     
     </script>
