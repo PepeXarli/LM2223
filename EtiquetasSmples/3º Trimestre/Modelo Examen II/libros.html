@@ -76,14 +76,16 @@
 
             $("#btn-libro").click(function(){
                 let id=$('#codLibro').val();
+                let autores=''
                 $.ajax({
                     url:`https://gutendex.com/books/${id}`,
                     success:function(r){
                         for(var i=0;i<r.authors.length;i++){
                             console.log(r);
+                            autores+=r.authors[i].name+'; ';
                         $('#resultados').html(
                             `<p>Título: ${r.title}</p>
-                            <p>Autor: ${r.authors[i].name}</p>
+                            <p>Autor: ${autores}</p>
                             <img src='${r.formats['image/jpeg']}'> <br>
                             <a href='${r.formats['text/plain']}' target='_blank'>Descarga aquí </a>
                             <p>Número de descargas: ${r.download_count}</p>
