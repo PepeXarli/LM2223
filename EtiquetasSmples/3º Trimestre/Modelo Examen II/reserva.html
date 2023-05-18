@@ -70,7 +70,7 @@
    
 
         $(function() {
-            var dateFormat = "mm/dd/yy",
+            var dateFormat = "dd/mm/yy",
                 from = $("#f_entrada").datepicker({
                     defaultDate: "+1w",
                     minDate: "+1D",
@@ -85,7 +85,7 @@
                     }
                 }),
                 to = $("#f_salida").datepicker({
-                    defaultDate: "+2w",
+                    defaultDate: "+1w",
                     minDate: "+2D",
                     maxDate: "+365D",
                     numberOfMonths: 1
@@ -103,6 +103,27 @@
                 return date;
             }
         });
+
+
+        $.datepicker.regional['es'] = {
+    closeText: 'Cerrar',
+    prevText: '<Ant',
+    nextText: 'Sig>',
+    currentText: 'Hoy',
+    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+    dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+    weekHeader: 'Sm',
+    dateFormat: 'dd/mm/yy',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: ''
+  };
+  $.datepicker.setDefaults($.datepicker.regional['es']);
+
     
             $('#calculo').click(function(e) {
                 e.preventDefault();
@@ -124,7 +145,7 @@
 
 
 
-     ;
+     
 
     
     </script>
